@@ -1,4 +1,5 @@
 import sys, copy
+
 rl = sys.stdin.readline
 n, m = map(int, rl().split())
 graph = [list(rl().rstrip()) for _ in range(n)]
