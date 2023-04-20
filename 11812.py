@@ -3,10 +3,11 @@ rl = sys.stdin.readline
 N, K, Q = map(int ,rl().split())
 def caldepth(x):
     if K==1: return x-1
-    t, cnt = 1, 0
+    t, cnt, temp = 1, 0, 1
     while x > t:
         cnt +=1
-        t = t+t*K
+        t = t+temp*K
+        temp *=K
     return cnt
 
 def findp(x):
@@ -14,6 +15,7 @@ def findp(x):
 
 for _ in range(Q):
     a, b = map(int, rl().split())
+    if K==1: print(abs(a-b)); continue
     ans = 0
     adep, bdep = caldepth(a), caldepth(b)
     if adep < bdep:
