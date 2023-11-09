@@ -21,7 +21,6 @@ while q:
             dpt[nx] = d + 1
             par[nx][0] = [x,w,w]
 
-
 for j in range(1,MAXDEPTH):
     for i in range(1,N+1):
         par[i][j][0] = par[par[i][j-1][0]][j-1][0]
